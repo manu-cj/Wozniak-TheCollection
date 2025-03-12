@@ -1,3 +1,4 @@
+// header ui function
 const headerUi = (header, siteName) => {
     header.style.backgroundColor = 'tomato';
     header.style.color = 'white';

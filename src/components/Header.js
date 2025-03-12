@@ -1,5 +1,4 @@
-// Note: Header ui element
-
+// Code to create the header of the site
 import headerUi from "../ui/headerUi";
 
 const Header = (header) => {
