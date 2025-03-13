@@ -26,7 +26,21 @@ const FilterNav = () => {
         filterNavItem.style.cursor = 'pointer';
         filterNavItem.style.padding = '0.5rem';
         filterNavItem.style.listStyleType = 'none';
-        
+        filterNavItem.style.borderRadius = '0.2rem';
+        filterNavItem.addEventListener('mouseover', () => {
+            filterNavItem.style.backgroundColor = 'tomato';
+            filterNavItem.style.color = 'white';
+        });
+        filterNavItem.addEventListener('mouseleave', () => {
+            if (filterCategory.includes(item)) {
+                filterNavItem.style.backgroundColor = 'tomato';
+                filterNavItem.style.color = 'white';
+            } else {
+                filterNavItem.style.backgroundColor = 'white';  
+                filterNavItem.style.color = 'black';
+            }
+        });
+               
         
         filterNavItem.addEventListener('click', () => {
             if (filterCategory.includes(item)) {

@@ -5,14 +5,15 @@ const FilterNavUi = (
   filterNavList,
   
 ) => {
-    filterNav.style.width = '80%';
+    filterNav.style.width = '500px';
     filterNav.style.backgroundColor = 'white';
     filterNav.style.padding = '1rem';
+    filterNav.style.margin = '1rem';
     filterNav.style.borderRadius = '5px';
     filterNav.style.boxShadow = '5px 5px 10px rgba(0, 0, 0, 0.4)';
     filterNav.style.display = 'flex';
     filterNav.style.flexDirection = 'row';
-    filterNav.style.justifyContent = 'space-around';
+    filterNav.style.justifyContent = 'baseline';
     filterNav.style.alignItems = 'center';
     filterNav.style.flexWrap = 'wrap';
     filterNav.style.gap = '15px';
@@ -34,7 +35,7 @@ const FilterNavUi = (
     filterNavList.style.display = 'flex';
     filterNavList.style.flexWrap = 'wrap';
     filterNavList.style.flexDirection = 'row';
-    filterNavList.style.justifyContent = 'space-around';
+    filterNavList.style.justifyContent = 'baseline';
     filterNavList.style.alignItems = 'center';
     filterNavList.style.gap = '15px';
 
