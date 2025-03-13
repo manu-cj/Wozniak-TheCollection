@@ -28,7 +28,7 @@ const DeleteModdalUi = (
     modalContent.style.justifyContent = 'space-around';
     modalContent.style.alignItems = 'center';
     modalContent.style.gap = '15px';
-    modalContent.style.boxShadow = '3px 5px 10px rgba(0, 0, 0, 0.2)';
+    modalContent.style.boxShadow = '5px 5px 10px rgba(0, 0, 0, 0.4)';
     
     modalText.style.color = 'black';
     modalText.style.fontSize = '1.5rem';

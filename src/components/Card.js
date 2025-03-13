@@ -73,12 +73,11 @@ const Card = (main, games, id, hrefImg, textTitle, description, genres) => {
     
 
 
-    const deleteIcons = document.querySelectorAll('.fa-trash-alt');
 
-        deleteIcon.addEventListener('click', (e) => {
-            e.stopPropagation();
-            DeleteModal(true, games, id, textTitle);
-        });
+    deleteIcon.addEventListener('click', (e) => {
+        e.stopPropagation();
+        DeleteModal(true, games, id, textTitle);
+    });
         
 
    

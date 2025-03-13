@@ -1,11 +1,13 @@
 import DeleteModalUi from '../ui/DeleteModalUi';
 import DeleteCard from './DeleteCard';
+import Notification from './Notifications';
 const DeleteModal = ( show, games, id, text ) => {
     const main = document.querySelector('main');
     console.log(id);
     
 
     if (show) {
+        document.body.style.overflow = 'hidden';
         const modal = document.createElement('div');
         const modalContent = document.createElement('div');
         const modalText = document.createElement('p');
@@ -29,12 +31,17 @@ const DeleteModal = ( show, games, id, text ) => {
 
         DeleteModalUi(modal, modalContent, modalText, buttonDiv,modalButton, closeModal);
         modalButton.addEventListener('click', () => {
-            console.log(id);
-            
             DeleteCard(games, id);
             modal.remove();
-        }
-        );
+            document.body.style.overflow = 'auto';
+            Notification(text);
+        });
+
+        closeModal.addEventListener('click', () => {
+            modal.remove();
+            document.body.style.overflow = 'auto';
+        })
+        
     }
 
   
