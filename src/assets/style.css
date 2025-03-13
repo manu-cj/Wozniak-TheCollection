@@ -5,12 +5,15 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #e8e3e3;
+}
+
 main {
-    margin-top: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 100vh;
-    background-color: #f0f0f0;
+    width: 100%;
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    padding: 50px 150px;
 }

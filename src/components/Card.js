@@ -1,6 +1,11 @@
 import cardUi from "../ui/cardUi";
-const Card = (main, hrefImg, textTitle, description, genres) => {
+import DeleteCard from "./DeleteCard";
+import DeleteModal from "./DeleteModal";
+const Card = (main, games, id, hrefImg, textTitle, description, genres) => {
     const card = document.createElement('article');
+
+    const controlDiv = document.createElement('div');
+    const deleteIcon = document.createElement('i');
 
     const imgDiv = document.createElement('div');
     const img = document.createElement('img');
@@ -14,13 +19,17 @@ const Card = (main, hrefImg, textTitle, description, genres) => {
     const cardText = document.createElement('p');
 
     card.classList.add('card');
+    deleteIcon.className = 'fas fa-trash-alt';
+    
+    
+
     img.src = hrefImg;
 
     cardTitle.textContent = textTitle;
     cardText.textContent = description;
 
     const genreColors = {
-        "Action RPG": "#ffcc00",
+        "Action RPG": "#d5ac07",
         "Fantasy": "#8a2be2",
         "MMORPG": "#1e90ff",
         "Horror": "#dc143c",
@@ -42,15 +51,17 @@ const Card = (main, hrefImg, textTitle, description, genres) => {
             genreSpan.style.backgroundColor = genreColors[genre];
             
         }
-        genreSpan.style.border = '1px solid gray';
+      
         genreSpan.style.color = 'white';
-        genreSpan.style.borderRadius = '0.5rem';
+        genreSpan.style.borderRadius = '0.2rem';
 
         genreSpan.textContent = genre;
         genreDiv.appendChild(genreSpan);
     });
 
     main.appendChild(card);
+    card.appendChild(controlDiv);
+    controlDiv.appendChild(deleteIcon);
     card.appendChild(imgDiv);
     imgDiv.appendChild(img);
     card.appendChild(cardContent);
@@ -58,14 +69,28 @@ const Card = (main, hrefImg, textTitle, description, genres) => {
     cardContent.appendChild(cardInfo);
     cardInfo.appendChild(cardTitle);
     cardInfo.appendChild(cardText);
+    
+    
+
+
+    const deleteIcons = document.querySelectorAll('.fa-trash-alt');
+
+        deleteIcon.addEventListener('click', (e) => {
+            e.stopPropagation();
+            DeleteModal(true, games, id, textTitle);
+        });
+        
+
+   
 
     cardUi(
         card,
+        controlDiv,
+        deleteIcon,
         imgDiv,
         img,
         cardContent,
         genreDiv,
-        
         cardInfo,
         cardTitle,
         cardText,
